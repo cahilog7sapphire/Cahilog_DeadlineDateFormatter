@@ -1,0 +1,20 @@
+import datetime
+
+eventtitle = input("Enter event title: ")
+year = int(input("Enter year: "))
+month = int(input("Enter month: "))
+day = int(input("Enter day: "))
+
+if month > 12 or month < 1:
+    print("Invalid month. Please enter a number between 1 and 12.")
+elif month in [4, 6, 9, 11] and day > 30:
+    print("Months April, June, September, and November only have 30 days.")
+else:
+    eventdate = datetime.datetime(year, month, day)
+    print("\nFormatted Output:")
+    print(f"Event: {eventtitle.upper()}")
+    print(f"Date: {eventdate.strftime('%B %d, %Y')}")
+    print(f"Year: {year}")
+    print(f"Month: {eventdate.strftime('%B')}")
+    print(f"Day: {day}")
+    print(f"Weekday: {eventdate.strftime('%A')}")
